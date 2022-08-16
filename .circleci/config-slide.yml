@@ -1,4 +1,4 @@
-version: 2.1
+ersion: 2.1
 
 commands:
   destroy-environment:
@@ -43,9 +43,7 @@ jobs:
       - run:
           name: Build front-end
           command: |
-            cd frontend
-            npm install
-            npm run build
+            # Your code here
             exit 1
       - save_cache:
           paths: [frontend/node_modules]
