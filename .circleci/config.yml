@@ -208,7 +208,7 @@ jobs:
       - run:
           name: Prepare environment for backend build
           command: |
-             cat \<< EOF > backend/.env
+            cat \<< EOF > backend/.env
             ENVIRONMENT=production
             VERSION=1
             TYPEORM_CONNECTION=postgres
@@ -372,8 +372,8 @@ workflows:
 #              only: [test-feature-branch]
       - configure-infrastructure:
           requires: [deploy-infrastructure]
-#      - run-migrations:
-#          requires: [configure-infrastructure]
+      - run-migrations:
+          requires: [configure-infrastructure]
 #      - deploy-frontend:
 #          requires: [run-migrations]
 #      - deploy-backend:
