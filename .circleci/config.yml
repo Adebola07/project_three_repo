@@ -222,11 +222,16 @@ jobs:
 
   run-migrations:
     docker:
-      - image: sleavely/node-awscli:14.x
+      - image: circleci/node:13.8.0
     steps:
       - checkout
       - restore_cache:
           keys: [backend-scan]
+      - run:
+          name: install dependencies
+          command: |
+              sudo apt update
+              sudo apt install -y awscli
       - run:
           name: Prepare environment for backend build
           command: |
