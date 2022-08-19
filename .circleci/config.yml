@@ -177,7 +177,7 @@ jobs:
       - run: apk add --update openssh-client git
       - add_ssh_keys:
               fingerprints: ["70:23:da:12:78:a3:71:d0:5c:d9:61:6e:06:67:d8:13"]
-      - attach workspace:
+      - attach_workspace:
                 at: ~/
       - run:
           name: Install dependencies
