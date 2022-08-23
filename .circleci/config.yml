@@ -15,6 +15,7 @@ commands:
           name: Destroy environments
           when: on_fail
           command: |
+            aws s3 rm "s3://udapeople-${CIRCLE_WORKFLOW_ID:0:5}" --recursive
             aws cloudformation delete-stack --stack-name backend-${CIRCLE_WORKFLOW_ID:0:5}
             aws cloudformation delete-stack --stack-name frontend-${CIRCLE_WORKFLOW_ID:0:5}
            # aws s3 rm "s3://${OldBucketID}" --recursive 
@@ -442,7 +443,8 @@ jobs:
       - run:
           name: Install dependencies
           command: |
-            yum -y install tar gzip
+            yum -y install tar
+            yum -y install gzip
       - run:
           name: Get old stack workflow id
           command: |
@@ -454,8 +456,8 @@ jobs:
             then
               echo "--------------------Delete Confirmed------------------------------"
               aws s3 rm "s3://udapeople-${OldWorkflowID}" --recursive
-              aws cloudformation delete-stack --stack-name "udapeople-backend-${OldWorkflowID}"
-              aws cloudformation delete-stack --stack-name "udapeople-frontend-${OldWorkflowID}"
+              aws cloudformation delete-stack --stack-name "backend-${OldWorkflowID}"
+              aws cloudformation delete-stack --stack-name "frontend-${OldWorkflowID}"
               aws cloudformation delete-stack --stack-name cloudfront-"${OldWorkflowID}"
             else 
               echo "------------------------Cannot Cleanup----------------------------"
