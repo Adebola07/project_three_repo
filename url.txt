@@ -1,0 +1,4 @@
+S3 URL ENDPOINT: http://udapeople-db902.s3-website-us-east-1.amazonaws.com
+
+
+GITHUB ACCOUNT: https://github.com/Adebola07/project_three_repo
