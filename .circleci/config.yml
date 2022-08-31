@@ -134,11 +134,9 @@ jobs:
             command: |
                  cd backend
                  npm install
-                 sudo npm install -g npm-check-updates
-                 npm-check-updates
-                 npm-check-updates -u
-                 npm install
-                 npm audit fix --audit-level=critical --force
+                 npm outdated
+                 npm update
+                # npm audit fix --audit-level=critical --force
        - save_cache:
           paths: [backend/node_modules]
           key: backend-scan
