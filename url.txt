@@ -1,4 +1,6 @@
-S3 URL ENDPOINT: http://udapeople-db902.s3-website-us-east-1.amazonaws.com
 
-
-GITHUB ACCOUNT: https://github.com/Adebola07/project_three_repo
+URL01 https://github.com/Adebola07/project_three_repo
+URL02 http://udapeople-8aa02.s3-website-us-east-1.amazonaws.com
+URL03 https://d1v21mdwmo24v4.cloudfront.net
+URL04 http://3.86.159.39:3030/api/status
+URL05 http://ec2-34-207-119-85.compute-1.amazonaws.com:9090/targets
