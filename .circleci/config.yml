@@ -134,7 +134,7 @@ jobs:
             command: |
                  cd backend
                  npm install
-                 npm install -g npm-check-updates
+                 sudo npm install -g npm-check-updates
                  npm-check-updates
                  npm-check-updates -u
                  npm install
